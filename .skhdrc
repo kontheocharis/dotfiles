@@ -73,7 +73,10 @@
 cmd - return : open -a Alacritty
 
 # open safari
-cmd + shift - return : open -a Safari
+cmd + shift - return : open -a "Google Chrome"
+
+# restart skhd and chunkwm
+ctrl + cmd + shift + alt - return: brew services restart skhd && brew services restart chunkwm && osascript -e 'display notification "chunkwm and skhd have been restarted." with title "Restarted!"'
 
 # close focused window
 alt - w : chunkc tiling::window --close

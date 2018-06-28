@@ -19,8 +19,9 @@ set cindent     " Use 'C' style program indenting
 " set expandtab   " Use spaces instead of tabs
 set shiftwidth=4        " Number of auto-indent spaces
 set smartindent " Enable smart-indent
-set smarttab    " Enable smart-tabs
-set softtabstop=4       " Number of spaces per Tab
+set smarttab    " Enable smart-tabs set softtabstop=4       " Number of spaces per Tab set cursorline
+set noshowmode
+set cursorline
 
 " Advanced
 set ruler       " Show row and column ruler information
@@ -55,13 +56,14 @@ Plug 'vim-airline/vim-airline'
 Plug 'wincent/terminus'
 Plug 'tomasiser/vim-code-dark'
 Plug 'vim-ruby/vim-ruby'
-" Plug 'https://github.com/vim-airline/vim-airline-themes'
-" Plug 'flazz/vim-colorschemes'
-" Plug 'rafi/awesome-vim-colorschemes'
+Plug 'kontheocharis/vim-colors-plain'
+Plug 'https://github.com/vim-airline/vim-airline-themes'
+Plug 'flazz/vim-colorschemes'
+Plug 'rafi/awesome-vim-colorschemes'
 "Plug 'trevordmiller/nova-vim'
 " Plug 'ayu-theme/ayu-vim'
 " Plug 'rakr/vim-two-firewatch'
-" Plug 'chriskempson/base16-vim'
+Plug 'chriskempson/base16-vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'tpope/vim-commentary'
 Plug 'dkarter/bullets.vim'
@@ -73,7 +75,7 @@ Plug 'danro/rename.vim'
 
 " Typescript stuff
 " Plug 'peitalin/vim-jsx-typescript'
-" Plug 'HerringtonDarkholme/yats.vim'
+Plug 'HerringtonDarkholme/yats.vim'
 Plug 'sheerun/vim-polyglot'
 " Plug 'Boshen/typescript-vim'
 Plug 'Quramy/tsuquyomi'
@@ -101,20 +103,20 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
 " Color theme
-set notermguicolors
 syntax enable
 set background=dark
+set notermguicolors
 
 let g:nord_italic = 1
 let g:nord_italic_comments = 1
 
-colorscheme nord
-let g:airline_theme='nord'
+colorscheme plain
+let g:airline_theme='monochrome'
 
 let &showbreak = '  '
 
 " Reset transparency
-" hi Normal guibg=NONE ctermbg=NONE
+hi Normal guibg=NONE ctermbg=NONE
 
 " New lines in normal mode
 nmap <S-Enter> O<Esc>j
@@ -201,6 +203,15 @@ let g:airline#extensions#keymap#enabled = '0'
 let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline_skip_empty_sections = 1
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_buffers = 0
+let g:airline#extensions#tabline#show_splits = 0
+let g:airline#extensions#tabline#show_tabs = 1
+let g:airline#extensions#tabline#show_tab_nr = 0
+let g:airline#extensions#tabline#show_tab_type = 0
+let g:airline#extensions#tabline#close_symbol = '×'
+let g:airline#extensions#tabline#show_close_button = 0
 
 autocmd VimLeave * call system('printf "\e[5 q" > $TTY')
 " </config>
