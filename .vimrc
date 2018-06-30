@@ -6,20 +6,19 @@ set showbreak=+++       " Wrap-broken line prefix
 set textwidth=100       " Line wrap (number of cols)
 set showmatch   " Highlight matching brace
 " set spell       " Enable spell-checking
-set visualbell  " Use visual bell (no beeping)
-set linebreak
-
-set hlsearch    " Highlight all search results
-set smartcase   " Enable smart-case search
-set ignorecase  " Always case-insensitive
+set visualbell  " Use visual bell (no beeping) 
+set linebreak 
+set hlsearch    " Highlight all search results 
+set smartcase   " Enable smart-case search 
+set ignorecase  " Always case-insensitive 
 set incsearch   " Searches for strings incrementally
-
 set autoindent  " Auto-indent new lines
 set cindent     " Use 'C' style program indenting
-" set expandtab   " Use spaces instead of tabs
-set shiftwidth=4        " Number of auto-indent spaces
+" set expandtab   " Use spaces instead of tabs 
+set shiftwidth=4        " Number of auto-indent spaces 
 set smartindent " Enable smart-indent
-set smarttab    " Enable smart-tabs set softtabstop=4       " Number of spaces per Tab set cursorline
+set smarttab    " Enable smart-tabs 
+set softtabstop=4       " Number of spaces per Tab 
 set noshowmode
 set cursorline
 
@@ -28,8 +27,7 @@ set ruler       " Show row and column ruler information
 set showtabline=2       " Show tab bar
 
 set autochdir   " Change working directory to open buffer
-
-set undolevels=1000     " Number of undo levels
+set undolevels=1000     " Number of undo levels 
 set backspace=indent,eol,start  " Backspace behaviour
 
 " </vimconfig.com generated>
@@ -51,7 +49,7 @@ Plug 'christoomey/vim-tmux-navigator'
 
 Plug 'tpope/vim-surround'
 Plug 'Chiel92/vim-autoformat'
-Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline'
 " Plug 'atelierbram/Base2Tone-vim'
 Plug 'wincent/terminus'
 Plug 'tomasiser/vim-code-dark'
@@ -197,7 +195,6 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-
 " airline
 let g:airline#extensions#keymap#enabled = '0'
 let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
@@ -212,6 +209,8 @@ let g:airline#extensions#tabline#show_tab_nr = 0
 let g:airline#extensions#tabline#show_tab_type = 0
 let g:airline#extensions#tabline#close_symbol = '×'
 let g:airline#extensions#tabline#show_close_button = 0
+
+set fillchars=vert:\│
 
 autocmd VimLeave * call system('printf "\e[5 q" > $TTY')
 " </config>
