@@ -6,20 +6,19 @@ set showbreak=+++       " Wrap-broken line prefix
 set textwidth=100       " Line wrap (number of cols)
 set showmatch   " Highlight matching brace
 " set spell       " Enable spell-checking
-set visualbell  " Use visual bell (no beeping) 
-set linebreak 
-set hlsearch    " Highlight all search results 
-set smartcase   " Enable smart-case search 
-set ignorecase  " Always case-insensitive 
+set visualbell  " Use visual bell (no beeping)
+set linebreak
+set hlsearch    " Highlight all search results
+set smartcase   " Enable smart-case search
+set ignorecase  " Always case-insensitive
 set incsearch   " Searches for strings incrementally
 set autoindent  " Auto-indent new lines
 set cindent     " Use 'C' style program indenting
-" set expandtab   " Use spaces instead of tabs 
-set shiftwidth=4        " Number of auto-indent spaces 
+" set expandtab   " Use spaces instead of tabs
+set shiftwidth=4        " Number of auto-indent spaces
 set smartindent " Enable smart-indent
-set smarttab    " Enable smart-tabs 
-set softtabstop=4       " Number of spaces per Tab 
-set noshowmode
+set smarttab    " Enable smart-tabs
+set softtabstop=4       " Number of spaces per Tab
 set cursorline
 
 " Advanced
@@ -27,7 +26,7 @@ set ruler       " Show row and column ruler information
 set showtabline=2       " Show tab bar
 
 set autochdir   " Change working directory to open buffer
-set undolevels=1000     " Number of undo levels 
+set undolevels=1000     " Number of undo levels
 set backspace=indent,eol,start  " Backspace behaviour
 
 " </vimconfig.com generated>
@@ -116,9 +115,9 @@ let &showbreak = '  '
 " Reset transparency
 hi Normal guibg=NONE ctermbg=NONE
 
-" New lines in normal mode
-nmap <S-Enter> O<Esc>j
-nmap <CR> o<Esc>k
+
+nnoremap <silent> zj o<Esc>k
+nnoremap <silent> zk O<Esc>j
 
 " tabs
 nnoremap gT :bprevious<CR>
@@ -149,8 +148,8 @@ let g:airline#extensions#wordcount#filetypes = '\vhelp|markdown|rst|org|text|asc
 
 " pdf
 " command! -nargs=1 Silent
-" 	    \   execute 'silent !' . <q-args>
-" 	    \ | execute 'redraw!'
+"	    \   execute 'silent !' . <q-args>
+"	    \ | execute 'redraw!'
 
 command! OpenPdf silent !open -a "Skim" out.pdf
 
@@ -162,6 +161,7 @@ function! s:goyo_enter()
     let b:quitting_bang = 0
     autocmd QuitPre <buffer> let b:quitting = 1
     cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
+    set nocursorline
 endfunction
 
 function! s:goyo_leave()
@@ -176,6 +176,8 @@ function! s:goyo_leave()
 
     " Reset transparency
     hi Normal guibg=NONE ctermbg=NONE
+
+    set cursorline
 endfunction
 
 autocmd! User GoyoEnter call <SID>goyo_enter()

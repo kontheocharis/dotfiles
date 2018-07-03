@@ -36,7 +36,7 @@ DISABLE_AUTO_TITLE="true"
 echo -n -e "\033]0; \007"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
@@ -103,6 +103,9 @@ fi
 
 # sync nvim with cvim
 alias cvimserver="python3 ~/Utilities/SyncNvimWithCvim/cvim_server.py"
+
+# Chrome alias
+alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
 
 # Nvim alias
 alias n="nvim"
